@@ -26,7 +26,7 @@
 		</div>
 		<div class="col-md-4">
 			<small>Créer le {{ $element->created_at}}</small>
-			<p>Nombre de commentaire : 25</p>
+			<p>Nombre de commentaire : {{ $element->comments->count() }}</p>
 			<p>
 				<a href="{{ route('comments.create', [
 					'id' => $element->id

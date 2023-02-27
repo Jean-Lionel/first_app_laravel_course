@@ -27,6 +27,19 @@
 
 <div>
 	<h4>Recent Comment</h4>
+
+
+	<div>
+		@foreach ($post->comments as $element)
+			{{-- expr --}}
+			<div class="card">
+				<h2>{{$element->title}}</h2>
+
+				<p>{{$element->body}}</p>
+				<p>Comment at {{$element->created_at}}</p>
+			</div>
+		@endforeach
+	</div>
 </div>
 
 @endsection
