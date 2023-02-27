@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\Comment;
 use App\Http\Requests\StoreCommentRequest;
 use App\Http\Requests\UpdateCommentRequest;
@@ -22,6 +23,11 @@ class CommentController extends Controller
     public function create()
     {
         //
+        $id = \Request::get('id');
+
+        $post = Post::find($id);
+
+        return view('comments.create',compact('post'));
     }
 
     /**

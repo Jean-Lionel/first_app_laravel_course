@@ -28,7 +28,9 @@
 			<small>Créer le {{ $element->created_at}}</small>
 			<p>Nombre de commentaire : 25</p>
 			<p>
-				<a href="{{ route('comments.create', $element->id) }}">Commentez</a>
+				<a href="{{ route('comments.create', [
+					'id' => $element->id
+					]) }}">Commentez</a>
 			</p>
 			<button>Like ❤️</button>
 			<p>Nombre de Like : 25</p>
